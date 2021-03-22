@@ -10,3 +10,4 @@
 #### (3) PBS and slurm Python job scripts
 ##### i. Screenshot of successfully running the PBS script on the AHPCC cluster Trestles
 <img width="424" alt="Screen Shot 2021-03-17 at 4 49 46 PM" src="https://user-images.githubusercontent.com/79071748/111546248-5ac0a580-8745-11eb-92d7-aff10035c9bf.png">
+#### (4) Python script containing nucleotide frequencies of the nad4L gene
