@@ -23,28 +23,26 @@ genome = SeqIO.read(args.fasta, 'fasta')
 with open (args.gff, 'r') as gff_in:
     # create a csv reader object
     reader = csv.reader(gff_in, delimiter='\t')
-
     # loop over all the lines in our reader object (i.e., parsed file)
-    fasta = []
     for line in reader:
         start  = line[3]
         end    = line[4]
         strand = line[6]
-
+        
         # feature header
-        header = genome.id , line[8:10]
+        print(">" + genome.id , line[-1])
 
         # extracting the sequence
-        feature_start = (int(line[3])) - 1
-            # print (feature_start)
-        feature_end = int(line[4])
-            # print(feature_end)
-        feature_seq = genome.seq[feature_start:feature_end]
-            # print (feature_seq)
+        feat_start = int(line[3]) - 1
+        feat_end = int(line[4])
         
-        # putting in FASTA format with header and appending the extracted sequences
-        fasta.append('>%s\n%s' % (header, feature_seq))
+        # accounting for some sequences on the reverse strand
+        if strand == '-': 
+            rev_feat_seq = genome.seq[feat_start:feat_end].reverse_complement()
+            print(rev_feat_seq)
+        else:
+            feat_seq = genome.seq[feat_start:feat_end]
+            print(feat_seq)
 
-# printing output in FASTA format
-with open('assn06.fasta', 'w') as fasta_out:
-    fasta_out.write('\n'.join(fasta))
+        print()
+    
