@@ -12,3 +12,5 @@
 <img width="424" alt="Screen Shot 2021-03-17 at 4 49 46 PM" src="https://user-images.githubusercontent.com/79071748/111546248-5ac0a580-8745-11eb-92d7-aff10035c9bf.png">
 
 #### (4) Python script and jupyter notebook containing nucleotide frequencies of the nad4L gene #### 
+#### (5) Python script that outputs features and respective feature sequences of the Citrullus lanatus genome in FASTA format ####
+#### (6) Python script that outputs genes and coding strand sequences ####
